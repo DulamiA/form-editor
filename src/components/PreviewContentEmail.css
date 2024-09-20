@@ -1,0 +1,53 @@
+.preview-content{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    opacity: 1;
+}
+
+.content{
+display: flex;
+}
+
+.counter-content{
+    display: flex;
+    padding: 8px;
+    gap: .5rem;
+}
+
+.email-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.email-title{
+    font-size: 24px;
+    text-align: left;
+    line-height: 1.25em;
+    padding: 7px 11px;
+}
+
+.email-description{
+    font-size: 20px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    padding: 4px 11px;
+}
+
+.preview-content input{
+    background-color: transparent;
+    border-top: none rgb(51, 51, 51);
+    border-right: none rgb(51, 51, 51);
+    border-bottom: 2px solid rgb(51, 51, 51);
+    border-left: none rgb(51, 51, 51);
+    border-image: initial;
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 7px 11px;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 150%;
+}
