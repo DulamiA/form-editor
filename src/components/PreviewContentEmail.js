@@ -3,7 +3,7 @@ import "./PreviewContentEmail.css";
 
 const PreviewContentEmail = ({ previewTitle, previewDescription }) => {
   return (
-    <div className="preview-content">
+    <div className="email-preview-content">
       <div className="content">
         <div className="counter-content">
           <span className="text-wrapper">1</span>

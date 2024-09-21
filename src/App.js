@@ -19,6 +19,9 @@ function App() {
     emailDescription: "Add  question description (optional)"
   });
 
+  // State to hold uploaded image preview URL
+  const [imagePreview, setImagePreview] = useState(null);
+
   const handleWelcomeTitleChange = (e) => {
     setFormConfig({ ...formConfig, welcomeTitle: e.target.value });
   };
@@ -49,6 +52,7 @@ function App() {
           handleWelcomeButtonChange = {handleWelcomeButtonChange}
           handleEmailTitleChange={handleEmailTitleChange}
           handleEmailDescriptionChange = {handleEmailDescriptionChange}
+          setImagePreview={setImagePreview}
         />
 
         {/* Define routes for each page */}
@@ -62,6 +66,7 @@ function App() {
                     previewTitle={formConfig.welcomeTitle}
                     previewDescription={formConfig.welcomeDescription}
                     previewButton={formConfig.welcomeButton}
+                    imagePreview={imagePreview}
                   />
                 }
               />
@@ -72,6 +77,7 @@ function App() {
                   previewTitle={formConfig.welcomeTitle}
                   previewDescription={formConfig.welcomeDescription}
                   previewButton={formConfig.welcomeButton}
+                  imagePreview={imagePreview}
                   />
                 }
               />

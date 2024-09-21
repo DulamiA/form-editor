@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import Switch from "./Switch";
@@ -10,9 +10,32 @@ const Sidebar = ({
   handleWelcomeButtonChange,
   handleEmailTitleChange,
   handleEmailDescriptionChange,
+  setImagePreview,
 }) => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Function to handle image upload
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result); // Store the image as a preview URL
+      };
+      reader.readAsDataURL(file); // Read the file as a data URL for preview
+    }
+  };
+
+  const fileInputRef = useRef(null);
+
+  const handleUploadButtonClick = () => {
+    fileInputRef.current.click(); // Trigger the hidden file input when the button is clicked
+  };
+
+  const handleRemoveImage = () => {
+    setImagePreview(null); // Clear the image preview
+  };
 
   const handleBackClick = () => {
     navigate("/");
@@ -56,22 +79,47 @@ const Sidebar = ({
             <div className="form-content">
               <label>Title</label>
               <input
+                className="textbox"
                 type="textbox"
                 value={formConfig.welcomeTitle}
                 onChange={handleWelcomeTitleChange}
               />
               <label>Description</label>
               <input
+                className="textbox"
                 type="textbox"
                 value={formConfig.welcomeDescription}
                 onChange={handleWelcomeDescriptionChange}
               />
               <label>Button Text</label>
               <input
+                className="textbox"
                 type="textbox"
                 value={formConfig.welcomeButton}
                 onChange={handleWelcomeButtonChange}
               />
+              <div className="file-input-container">
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="image-upload"
+                  ref={fileInputRef} // Reference the hidden file input
+                  style={{ display: "none" }} // Hide the default file input
+                />
+                <button
+                  onClick={handleUploadButtonClick}
+                  className="upload-button"
+                >
+                  Upload
+                </button>
+                <button
+                  onClick={handleRemoveImage}
+                  className="remove-image-button"
+                >
+                  Remove Image
+                </button>
+              </div>
             </div>
           )}
 
@@ -79,12 +127,14 @@ const Sidebar = ({
             <div className="form-content">
               <label>Title</label>
               <input
+                className="textbox"
                 type="textbox"
                 value={formConfig.emailTitle}
                 onChange={handleEmailTitleChange}
               />
               <label>Description</label>
               <input
+                className="textbox"
                 type="textbox"
                 value={formConfig.emailDescription}
                 onChange={handleEmailDescriptionChange}

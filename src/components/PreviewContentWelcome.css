@@ -1,55 +1,74 @@
-.preview-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 60%;
-    align-items: start;
-    gap: 10px;
-    opacity: 1;
+.preview-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  opacity: 1;
 }
 
-.welcome-title{
-    color: rgb(0, 0, 0);
-    font-size: 38px;
-    font-family: Arial, sans-serif;
-    padding: 0px;
-    overflow-y: hidden;
-    resize: none;
-    height: 61.6px;
-    min-height: 61.6px;
-    max-height: 301.6px;
-    font-weight: 700;
+.welcome-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
-.welcome-description{
-    color: rgb(0, 0, 0);
-    font-size: 1.75em;
-    font-family: Arial, sans-serif;
-    padding: 0px;
-    overflow-y: hidden;
-    resize: none;
-    height: 40.6px;
-    min-height: 40.6px;
-    max-height: 196.6px;
+.welcome-title {
+  color: rgb(0, 0, 0);
+  font-size: 38px;
+  font-family: Arial, sans-serif;
+  padding: 0px;
+  overflow-y: hidden;
+  resize: none;
+  height: 61.6px;
+  min-height: 61.6px;
+  max-height: 301.6px;
+  font-weight: 700;
 }
 
-.button-wrapper{
-    display: flex;
-    align-items: center;
-    gap: 24px;
+.welcome-description {
+  color: rgb(0, 0, 0);
+  font-size: 1.75em;
+  font-family: Arial, sans-serif;
+  padding: 0px;
+  overflow-y: hidden;
+  resize: none;
+  height: 40.6px;
+  min-height: 40.6px;
+  max-height: 196.6px;
 }
 
-.welcome-button{
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-radius: 16px;
-    font-size: 16px;
-    line-height: 1.5;
-    height: 40px;
-    padding: 7px 15px
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
-.helper-text{
-    font-size: 12px;
+.welcome-button {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 40px;
+  padding: 7px 15px;
 }
 
+.helper-text {
+  font-size: 12px;
+}
+
+.image-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.image-preview img {
+  width: 80%;
+  object-fit: contain;
+  border-radius: 18px;
+  opacity: 1;
+  transform: none;
+}
